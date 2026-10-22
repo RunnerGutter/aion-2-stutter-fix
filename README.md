@@ -4,15 +4,18 @@
 
 <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/7f13643a-020f-4e42-ac59-7e6da47a048d" />
 
-</div>
+
 
 # ⚡ AION 2 Stutter Fix 2026
 
 **Eliminate stutters, boost FPS, and fix frame-time drops — without touching gameplay.**
+</div>
 
 [![Version](https://img.shields.io/badge/version-1.0.0-2563eb?style=for-the-badge)](https://RunnerGutter.github.io/aion-2-stutter-fix/)
 [![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-0078d4?style=for-the-badge&logo=windows)](https://RunnerGutter.github.io/aion-2-stutter-fix/)
 [![License](https://img.shields.io/badge/license-MIT-16a34a?style=for-the-badge)](LICENSE)
+
+</div>
 
 ---
 
